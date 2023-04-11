@@ -72,7 +72,7 @@ def get_data(hostname, user, key_filename):
 
     # get processes on the gpus
     process_data = get_gpu_processes(hostname, user, key_filename)
-
+    
     if not process_data.empty:
         # combine load data with username through gpu_uuid
         for cur_idx, cur_row in load_data.iterrows():
@@ -80,7 +80,7 @@ def get_data(hostname, user, key_filename):
                 username = process_data[process_data['gpu_uuid'] == cur_row['gpu_uuid']]['username'].values
 
                 load_data.loc[cur_idx, 'username'] = ', '.join(username)
-
+    
     return load_data
 
 
@@ -101,6 +101,6 @@ if __name__ == '__main__':
     for cur_host in HOSTS:
         csv = get_data(cur_host, config['common']['user'], config['common']['key_filename'])
         results.append(csv)
-
+    
     results = pd.concat(results)
     results.to_csv('load_data.csv')

@@ -14,8 +14,8 @@
           <thead>
             <tr>
               <th scope="col">#ID</th>
-              <th scope="col">GPU</th>
-              <th scope="col">Load</th>
+              <th scope="col">Compute Load</th>
+              <th scope="col">Memory Load</th>
             </tr>
           </thead>
           <tbody>
@@ -28,8 +28,8 @@
                     class="table-success"
                 {% endif %}>
               <th scope="row">{{ cur_gpu.gpu_idx}}</th>
-              <td>{{ cur_gpu.gpu_name|replace('GeForce GTX ', '') }}</td>
-              <td>{{ cur_gpu.load }} %</td>
+              <td>{{ cur_gpu.load }}</td>
+              <td>{{ cur_gpu.load_mem }} %</td>
             </tr>
             {% endfor %}
 
