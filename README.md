@@ -74,7 +74,7 @@ There were other ways to achieve this, such as regularly copying the files, but 
 The execution of these scripts can be done using a cronjob. For code at `/home/ubuntu/web-gpu-monitor`, and a conda environment with Python at `/home/ubuntu/.conda/envs/web-gpu-monitor/bin/python` and to run it every 5 minutes, run `crontab -e` to edit the crontab, and insert the lines below:
 
 ```bash
-5 * * * * cd /home/ubuntu/web-gpu-monitor/ && /home/ubuntu/.conda/envs/web-gpu-monitor/bin/python /home/ubuntu/web-gpu-monitor/fetch_data.py -c config.ini && /home/ubuntu/web-gpu-monitor/ && /home/ubuntu/.conda/envs/web-gpu-monitor/bin/python /home/ubuntu/web-gpu-monitor/render_website.py
+*/5 * * * * cd /home/ubuntu/web-gpu-monitor/ && /home/ubuntu/.conda/envs/web-gpu-monitor/bin/python /home/ubuntu/web-gpu-monitor/fetch_data.py -c config.ini && /home/ubuntu/web-gpu-monitor/ && /home/ubuntu/.conda/envs/web-gpu-monitor/bin/python /home/ubuntu/web-gpu-monitor/render_website.py
 ```
 
 Note: you need to make sure the user running the script has write access to the 
