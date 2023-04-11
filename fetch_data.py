@@ -9,13 +9,13 @@ import pandas as pd
 import invoke
 
 
-def get_username(pid, hostname, user):
+def get_username(pid, hostname, user, key_filename):
     """Get the corresponding username for a PID"""
     SSH_CMD = 'ps -o user= {}'.format(pid)
 
     # sometimes zombies occur...
     try:
-        result = Connection(hostname, user=user).run(SSH_CMD, hide=True).stdout
+        result = Connection(hostname, user=user, connect_kwargs={"key_filename": key_filename}).run(SSH_CMD, hide=True).stdout
         result = str.strip(result)
     except invoke.exceptions.UnexpectedExit:
         result = None
@@ -23,10 +23,10 @@ def get_username(pid, hostname, user):
     return result
 
 
-def get_gpu_processes(hostname, user):
+def get_gpu_processes(hostname, user, key_filename):
     SSH_CMD = 'nvidia-smi --query-compute-apps=pid,gpu_uuid --format=csv'
 
-    result = Connection(hostname, user=user).run(SSH_CMD, hide=True).stdout  # does return a CSV
+    result = Connection(hostname, user=user, connect_kwargs={"key_filename": key_filename}).run(SSH_CMD, hide=True).stdout  # does return a CSV
 
     csv = io.StringIO(result)  # temporary string stream
     csv = pd.read_csv(csv)  # parse as csv
@@ -34,7 +34,7 @@ def get_gpu_processes(hostname, user):
     csv = csv.rename(columns={' gpu_uuid': 'gpu_uuid'})
 
     for cur_idx, cur_row in csv.iterrows():
-        username = get_username(cur_row['pid'], hostname, user)
+        username = get_username(cur_row['pid'], hostname, user, key_filename)
 
         if username is None:
             username = 'Zombie'
@@ -44,11 +44,11 @@ def get_gpu_processes(hostname, user):
     return csv
 
 
-def get_load_data(hostname, user):
+def get_load_data(hostname, user, key_filename):
     """Get the output from `nvidia-smi` and parse it."""
     SSH_CMD = 'nvidia-smi --query-gpu=utilization.gpu,utilization.memory,index,gpu_name,gpu_uuid --format=csv'
 
-    result = Connection(hostname, user=user).run(SSH_CMD, hide=True).stdout  # does return a CSV
+    result = Connection(hostname, user=user, connect_kwargs={"key_filename": key_filename}).run(SSH_CMD, hide=True).stdout  # does return a CSV
 
     csv = io.StringIO(result)  # temporary string stream
     csv = pd.read_csv(csv)  # parse as csv
@@ -66,12 +66,12 @@ def get_load_data(hostname, user):
     return csv
 
 
-def get_data(hostname, user):
-    load_data = get_load_data(hostname, user)
+def get_data(hostname, user, key_filename):
+    load_data = get_load_data(hostname, user, key_filename)
     load_data['username'] = ''
 
     # get processes on the gpus
-    process_data = get_gpu_processes(hostname, user)
+    process_data = get_gpu_processes(hostname, user, key_filename)
 
     if not process_data.empty:
         # combine load data with username through gpu_uuid
@@ -99,7 +99,7 @@ if __name__ == '__main__':
     results = []
 
     for cur_host in HOSTS:
-        csv = get_data(cur_host, config['common']['user'])
+        csv = get_data(cur_host, config['common']['user'], config['common']['key_filename'])
         results.append(csv)
 
     results = pd.concat(results)

@@ -1,25 +1,8 @@
 ,load,load_mem,gpu_idx,gpu_name,gpu_uuid,hostname,username
-0,0,0,0, GeForce GTX 1080 Ti, GPU-aa,host1.domain.tld,
-1,0,0,1, GeForce GTX 1080 Ti, GPU-ab,host1.domain.tld,
-2,0,0,2, GeForce GTX 1080 Ti, GPU-ac,host1.domain.tld,
-3,0,0,3, GeForce GTX 1080 Ti, GPU-ad,host1.domain.tld,
-0,77,10,0, GeForce GTX 1080, GPU-ba,host2.domain.tld,user1
-1,92,49,1, GeForce GTX 1080, GPU-bb,host2.domain.tld,user1
-2,0,0,2, GeForce GTX 1080, GPU-bc,host2.domain.tld,
-3,0,0,3, GeForce GTX 1080, GPU-bd,host2.domain.tld,
-0,92,68,0, GeForce GTX 1080 Ti, GPU-ca,host3.domain.tld,user2
-1,0,0,1, GeForce GTX 1080 Ti, GPU-cb,host3.domain.tld,
-2,0,0,2, GeForce GTX 1080 Ti, GPU-cc,host3.domain.tld,
-3,0,0,3, GeForce GTX 1080 Ti, GPU-cd,host3.domain.tld,
-0,0,0,0, GeForce GTX 1080 Ti, GPU-da,host4.domain.tld,
-1,100,13,1, GeForce GTX 1080 Ti, GPU-db,host4.domain.tld,user3
-2,0,0,2, GeForce GTX 1080 Ti, GPU-dc,host4.domain.tld,user4
-3,100,8,3, GeForce GTX 1080 Ti, GPU-dd,host4.domain.tld,user3
-0,0,0,0, GeForce GTX 1080 Ti, GPU-ea,host5.domain.tld,
-1,0,0,1, GeForce GTX 1080 Ti, GPU-eb,host5.domain.tld,
-2,0,0,2, GeForce GTX 1080 Ti, GPU-ec,host5.domain.tld,
-3,0,0,3, GeForce GTX 1080 Ti, GPU-ed,host5.domain.tld,
-0,91,38,0, GeForce GTX 1080 Ti, GPU-fa,host6.domain.tld,"user5, user5"
-1,96,43,1, GeForce GTX 1080 Ti, GPU-fb,host6.domain.tld,"user5, user5"
-2,96,34,2, GeForce GTX 1080 Ti, GPU-fc,host6.domain.tld,"user5, user5"
-3,97,46,3, GeForce GTX 1080 Ti, GPU-fd,host6.domain.tld,"user5, user5"
+0,0,0,0, Tesla V100S-PCIE-32GB, GPU-0e417197-c79f-97fa-fa65-0ba1a63aca2e,tejo.mlkd.tp.vps.inesc-id.pt,
+0,99,71,0, Tesla V100S-PCIE-32GB, GPU-c0ebb7bb-8fb3-9893-b431-f463baee1ef8,douro.mlkd.tp.vps.inesc-id.pt,ipc
+0,0,0,0, Tesla V100S-PCIE-32GB, GPU-ea996ec9-fe08-6064-6e75-34e5414dfa2e,mondego.mlkd.tp.vps.inesc-id.pt,
+0,0,0,0, Tesla V100S-PCIE-32GB, GPU-74057750-a84f-baba-8061-50a6b4f05b71,zezere.mlkd.tp.vps.inesc-id.pt,"msg, jpn"
+1,0,0,1, Tesla V100S-PCIE-32GB, GPU-2f4ad845-47b0-5408-f2eb-6398d4407be4,zezere.mlkd.tp.vps.inesc-id.pt,
+2,100,26,2, Tesla V100S-PCIE-32GB, GPU-14772139-f724-d5c5-5eee-672d4f441bb0,zezere.mlkd.tp.vps.inesc-id.pt,avd
+3,100,51,3, Tesla V100S-PCIE-32GB, GPU-02fb4fda-837f-8f36-249d-0055dc335fe4,zezere.mlkd.tp.vps.inesc-id.pt,msg
