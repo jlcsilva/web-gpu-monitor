@@ -9,7 +9,7 @@ import pandas as pd
 
 if __name__ == '__main__':
     PATH = os.path.dirname(os.path.abspath(__file__))
-    PATH_OUTPUT = 'output'
+    PATH_OUTPUT = '.'
     PATH_DATA = 'load_data.csv'
 
     if not os.path.exists(PATH_OUTPUT):

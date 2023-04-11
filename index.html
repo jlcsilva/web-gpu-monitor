@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Stefan Balke">
+
+    <title>GPU Monitor</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/gpu-monitor.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+      <h1 class="display-4">Cluster Overview</h1>
+      <p class="lead">Quick overview of available GPU resources.</p>
+    </div>
+
+    <div class="container">
+      
+
+<pandas.core.groupby.generic.DataFrameGroupBy object at 0x7ff3e0218390>
+<div class="card-deck mb-3 text-center">
+
+  <div class="card mb-4 shadow-sm">
+    <div class="card-header">
+      <h4 class="my-0 font-weight-normal">douro.mlkd.tp.vps.inesc-id.pt</h4>
+    </div>
+    <div class="card-body">
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#ID</th>
+              <th scope="col">Compute Load</th>
+              <th scope="col">Memory Load</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr 
+                    class="table-danger"
+                    data-toggle="tooltip"
+                    title="ipc, Memory: 77%"
+                >
+              <th scope="row">0</th>
+              <td>99 %</td>
+              <td>77 %</td>
+            </tr>
+            
+
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+  <div class="card mb-4 shadow-sm">
+    <div class="card-header">
+      <h4 class="my-0 font-weight-normal">mondego.mlkd.tp.vps.inesc-id.pt</h4>
+    </div>
+    <div class="card-body">
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#ID</th>
+              <th scope="col">Compute Load</th>
+              <th scope="col">Memory Load</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr 
+                    class="table-success"
+                >
+              <th scope="row">0</th>
+              <td>0 %</td>
+              <td>0 %</td>
+            </tr>
+            
+
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+  <div class="card mb-4 shadow-sm">
+    <div class="card-header">
+      <h4 class="my-0 font-weight-normal">tejo.mlkd.tp.vps.inesc-id.pt</h4>
+    </div>
+    <div class="card-body">
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#ID</th>
+              <th scope="col">Compute Load</th>
+              <th scope="col">Memory Load</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr 
+                    class="table-success"
+                >
+              <th scope="row">0</th>
+              <td>0 %</td>
+              <td>0 %</td>
+            </tr>
+            
+
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+  <div class="card mb-4 shadow-sm">
+    <div class="card-header">
+      <h4 class="my-0 font-weight-normal">zezere.mlkd.tp.vps.inesc-id.pt</h4>
+    </div>
+    <div class="card-body">
+      <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#ID</th>
+              <th scope="col">Compute Load</th>
+              <th scope="col">Memory Load</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr 
+                    class="table-danger"
+                    data-toggle="tooltip"
+                    title="msg, jpn, Memory: 0%"
+                >
+              <th scope="row">0</th>
+              <td>0 %</td>
+              <td>0 %</td>
+            </tr>
+            
+            <tr 
+                    class="table-success"
+                >
+              <th scope="row">1</th>
+              <td>0 %</td>
+              <td>0 %</td>
+            </tr>
+            
+            <tr 
+                    class="table-success"
+                >
+              <th scope="row">2</th>
+              <td>0 %</td>
+              <td>0 %</td>
+            </tr>
+            
+            <tr 
+                    class="table-danger"
+                    data-toggle="tooltip"
+                    title="msg, Memory: 0%"
+                >
+              <th scope="row">3</th>
+              <td>13 %</td>
+              <td>0 %</td>
+            </tr>
+            
+
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+</div>
+
+
+
+      <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+          <div class="col-12 col-md">
+            <small class="d-block mb-3 text-muted">
+Last update: Tue Apr 11 19:43:14 2023
+</small>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+        setInterval(function() {
+            window.location.reload();
+        }, 60000);
+    });
+    </script>
+  </body>
+</html>
